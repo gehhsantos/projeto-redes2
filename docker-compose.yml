@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  roteador1:
+    build: ./roteador
+    container_name: roteador1
+    networks:
+      - rede1
+
+  host1:
+    build: ./host
+    container_name: host1
+    networks:
+      - rede1
+
+  host2:
+    build: ./host
+    container_name: host2
+    networks:
+      - rede1
+
+networks:
+  rede1:
+    driver: bridge
