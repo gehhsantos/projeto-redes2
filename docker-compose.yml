@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # SUBREDE 1
+  host1:
+    build: ./host
+    container_name: host1
+    networks:
+      - rede1
+
+  host2:
+    build: ./host
+    container_name: host2
+    networks:
+      - rede1
+
+  roteador1:
+    build: ./roteador
+    container_name: roteador1
+    networks:
+      - rede1
+      - rede_backbone
+
+  # SUBREDE 2
+  host3:
+    build: ./host
+    container_name: host3
+    networks:
+      - rede2
+
+  host4:
+    build: ./host
+    container_name: host4
+    networks:
+      - rede2
+
+  roteador2:
+    build: ./roteador2
+    container_name: roteador2
+    networks:
+      - rede2
+      - rede_backbone
+
+  # NOVO ROTEADOR 3
+  roteador3:
+    build: ./roteador3
+    container_name: roteador3
+    networks:
+      - rede_backbone
+
+networks:
+  rede1:
+    driver: bridge
+
+  rede2:
+    driver: bridge
+
+  rede_backbone:
+    driver: bridge

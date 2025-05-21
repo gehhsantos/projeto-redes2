@@ -1,0 +1,429 @@
+[ENTRYPONT] Script entrypoint.sh foi executado!
+[ROTEADOR R1] INÍCIO DO SCRIPT
+
+[ROTEADOR R1] Script roteador.py foi iniciado com sucesso!
+
+[THREAD RECEBER R1] Iniciada.
+[RECEBER R1] Escutando na porta 5000 (UDP)
+[THREAD ENVIAR R1] Iniciada.
+[DEBUG R1] Enviando para ('roteador2', 5000)
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:
+[ENVIAR R1] Enviado para ('roteador2', 5000): {"id": "R1", "vizinhos": ["R2"], "custos": {"R2": 1}}
+[RECEBER R1] De ('172.18.0.2', 58098): ID=R2 | Vizinhos=['R1'] | Custos={'R1': 1}
+[LSDB R1] Atualizada: {
+  "R2": {
+    "vizinhos": [
+      "R1"
+    ],
+    "custos": {
+      "R1": 1
+    }
+  }
+}
+
+[DIJKSTRA R1] Caminhos calculados a partir de R1:

@@ -1,0 +1,121 @@
+import threading
+import socket
+import time
+import sys
+import json
+
+print("[ROTEADOR R3] INÍCIO DO SCRIPT")
+sys.stdout.flush()
+time.sleep(1)
+
+lsdb = {}
+lsdb_lock = threading.Lock()
+
+def receber():
+    print("[THREAD RECEBER R3] Iniciada.")
+    sys.stdout.flush()
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        sock.bind(("0.0.0.0", 5000))
+        print("[RECEBER R3] Escutando na porta 5000 (UDP)")
+        sys.stdout.flush()
+        while True:
+            try:
+                dados, addr = sock.recvfrom(1024)
+                mensagem = dados.decode()
+                pacote = json.loads(mensagem)
+                print(f"[RECEBER R3] De {addr}: ID={pacote['id']} | Vizinhos={pacote['vizinhos']} | Custos={pacote['custos']}")
+                sys.stdout.flush()
+
+                with lsdb_lock:
+                    lsdb[pacote["id"]] = {
+                        "vizinhos": pacote["vizinhos"],
+                        "custos": pacote["custos"]
+                    }
+                    print(f"[LSDB R3] Atualizada: {json.dumps(lsdb, indent=2)}")
+                    sys.stdout.flush()
+                    executar_dijkstra("R3", lsdb)
+
+            except Exception as e:
+                print(f"[ERRO RECEBER R3] Durante recebimento: {e}")
+                sys.stdout.flush()
+            time.sleep(1)
+    except OSError as e:
+        print(f"[ERRO RECEBER R3] Falha ao abrir porta 5000: {e}")
+        sys.stdout.flush()
+
+def enviar():
+    print("[THREAD ENVIAR R3] Iniciada.")
+    sys.stdout.flush()
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    destinos = [("roteador1", 5000), ("roteador2", 5000)]
+    print(f"[DEBUG R3] Enviando para {destinos}")
+    sys.stdout.flush()
+    time.sleep(5)
+
+    while True:
+        try:
+            pacote = {
+                "id": "R3",
+                "vizinhos": ["R1", "R2"],
+                "custos": {"R1": 1, "R2": 1}
+            }
+            mensagem = json.dumps(pacote)
+            for destino in destinos:
+                sock.sendto(mensagem.encode(), destino)
+                print(f"[ENVIAR R3] Enviado para {destino}: {mensagem}")
+                sys.stdout.flush()
+        except Exception as e:
+            print(f"[ERRO ENVIAR R3] {e}")
+            sys.stdout.flush()
+        time.sleep(5)
+
+def executar_dijkstra(origem, lsdb):
+    distancias = {no: float("inf") for no in lsdb}
+    anteriores = {}
+    visitados = set()
+    distancias[origem] = 0
+
+    while len(visitados) < len(lsdb):
+        atual = min((no for no in lsdb if no not in visitados), key=lambda n: distancias[n], default=None)
+        if atual is None:
+            break
+
+        visitados.add(atual)
+        for vizinho in lsdb[atual]["vizinhos"]:
+            if vizinho not in lsdb:
+                continue
+            custo = lsdb[atual]["custos"].get(vizinho, float("inf"))
+            if distancias[atual] + custo < distancias[vizinho]:
+                distancias[vizinho] = distancias[atual] + custo
+                anteriores[vizinho] = atual
+
+    caminhos = {}
+    for destino in lsdb:
+        if destino == origem:
+            continue
+        caminho = []
+        atual = destino
+        while atual in anteriores:
+            caminho.insert(0, atual)
+            atual = anteriores[atual]
+        if caminho:
+            caminho.insert(0, origem)
+            caminhos[destino] = caminho
+
+    print(f"\n[DIJKSTRA R3] Caminhos calculados a partir de {origem}:")
+    for destino, caminho in caminhos.items():
+        print(f" - {origem} → {destino}: {' → '.join(caminho)} (Custo: {distancias[destino]})")
+    sys.stdout.flush()
+
+print("\n[ROTEADOR R3] Script roteador3.py foi iniciado com sucesso!\n")
+sys.stdout.flush()
+
+thread_receber = threading.Thread(target=receber)
+thread_enviar = threading.Thread(target=enviar)
+
+thread_receber.start()
+thread_enviar.start()
+
+while True:
+    time.sleep(1)
