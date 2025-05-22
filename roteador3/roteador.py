@@ -4,7 +4,7 @@ import time
 import sys
 import json
 
-print("[ROTEADOR R3] INÍCIO DO SCRIPT")
+print("[ROTEADOR R2] INÍCIO DO SCRIPT")
 sys.stdout.flush()
 time.sleep(1)
 
@@ -12,19 +12,19 @@ lsdb = {}
 lsdb_lock = threading.Lock()
 
 def receber():
-    print("[THREAD RECEBER R3] Iniciada.")
+    print("[THREAD RECEBER R2] Iniciada.")
     sys.stdout.flush()
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
         sock.bind(("0.0.0.0", 5000))
-        print("[RECEBER R3] Escutando na porta 5000 (UDP)")
+        print("[RECEBER R2] Escutando na porta 5000 (UDP)")
         sys.stdout.flush()
         while True:
             try:
                 dados, addr = sock.recvfrom(1024)
                 mensagem = dados.decode()
                 pacote = json.loads(mensagem)
-                print(f"[RECEBER R3] De {addr}: ID={pacote['id']} | Vizinhos={pacote['vizinhos']} | Custos={pacote['custos']}")
+                print(f"[RECEBER R2] De {addr}: ID={pacote['id']} | Vizinhos={pacote['vizinhos']} | Custos={pacote['custos']}")
                 sys.stdout.flush()
 
                 with lsdb_lock:
@@ -32,41 +32,41 @@ def receber():
                         "vizinhos": pacote["vizinhos"],
                         "custos": pacote["custos"]
                     }
-                    print(f"[LSDB R3] Atualizada: {json.dumps(lsdb, indent=2)}")
+                    print(f"[LSDB R2] Atualizada: {json.dumps(lsdb, indent=2)}")
                     sys.stdout.flush()
-                    executar_dijkstra("R3", lsdb)
+                    executar_dijkstra("R2", lsdb)
 
             except Exception as e:
-                print(f"[ERRO RECEBER R3] Durante recebimento: {e}")
+                print(f"[ERRO RECEBER R2] Durante recebimento: {e}")
                 sys.stdout.flush()
             time.sleep(1)
     except OSError as e:
-        print(f"[ERRO RECEBER R3] Falha ao abrir porta 5000: {e}")
+        print(f"[ERRO RECEBER R2] Falha ao abrir porta 5000: {e}")
         sys.stdout.flush()
 
 def enviar():
-    print("[THREAD ENVIAR R3] Iniciada.")
+    print("[THREAD ENVIAR R2] Iniciada.")
     sys.stdout.flush()
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    destinos = [("roteador1", 5000), ("roteador2", 5000)]
-    print(f"[DEBUG R3] Enviando para {destinos}")
+    destinos = [("roteador1", 5000), ("roteador3", 5000)]  # Agora envia para R1 e R3
+    print(f"[DEBUG R2] Enviando para {destinos}")
     sys.stdout.flush()
     time.sleep(5)
 
     while True:
         try:
             pacote = {
-                "id": "R3",
-                "vizinhos": ["R1", "R2"],
-                "custos": {"R1": 1, "R2": 1}
+                "id": "R2",
+                "vizinhos": ["R1", "R3"],
+                "custos": {"R1": 1, "R3": 1}
             }
             mensagem = json.dumps(pacote)
             for destino in destinos:
                 sock.sendto(mensagem.encode(), destino)
-                print(f"[ENVIAR R3] Enviado para {destino}: {mensagem}")
+                print(f"[ENVIAR R2] Enviado para {destino}: {mensagem}")
                 sys.stdout.flush()
         except Exception as e:
-            print(f"[ERRO ENVIAR R3] {e}")
+            print(f"[ERRO ENVIAR R2] {e}")
             sys.stdout.flush()
         time.sleep(5)
 
@@ -103,12 +103,12 @@ def executar_dijkstra(origem, lsdb):
             caminho.insert(0, origem)
             caminhos[destino] = caminho
 
-    print(f"\n[DIJKSTRA R3] Caminhos calculados a partir de {origem}:")
+    print(f"\n[DIJKSTRA R2] Caminhos calculados a partir de {origem}:")
     for destino, caminho in caminhos.items():
         print(f" - {origem} → {destino}: {' → '.join(caminho)} (Custo: {distancias[destino]})")
     sys.stdout.flush()
 
-print("\n[ROTEADOR R3] Script roteador3.py foi iniciado com sucesso!\n")
+print("\n[ROTEADOR R2] Script roteador2.py foi iniciado com sucesso!\n")
 sys.stdout.flush()
 
 thread_receber = threading.Thread(target=receber)
